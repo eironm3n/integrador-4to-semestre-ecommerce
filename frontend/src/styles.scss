@@ -1,0 +1,28 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #1f1f1f;
+  --banner-color: #256144;
+  --banner-text-color: #ffffff;
+  --primary-color: #256144;
+  --primary-color-text: #ffffff;
+  --secondary-color: #4f9c77;
+  --secondary-color-text: #ffffff;
+  --terciary-color: #eec8b0;
+}
+
+app-root {
+  font-family: 'PlusJakartaSans', sans-serif;
+  font-weight: 400;
+  display: block;
+  background: var(--background-color);
+}
+
+// Eliminar espacios del layout de Nebular
+nb-layout-column {
+  padding: 0 !important;
+}
+
+nb-layout .layout-container {
+  padding: 0 !important;
+  margin-top: 90px;
+}

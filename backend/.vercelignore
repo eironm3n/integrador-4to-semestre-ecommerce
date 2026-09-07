@@ -1,0 +1,43 @@
+# Archivos de entorno local
+.env
+.env.local
+.venv
+venv/
+ENV/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Directorios de desarrollo
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de base de datos local
+*.db
+*.sqlite
+*.sqlite3
+
+# Migraciones (puedes descomentar si quieres incluirlas)
+# migrations/
+
+# Scripts de desarrollo
+setup.ps1
+seed.py
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
