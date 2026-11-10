@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   NbDialogRef,
   NbCardModule,
@@ -13,11 +13,10 @@ import {
   styleUrls: ['./logout-dialog.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     NbCardModule,
     NbButtonModule,
     NbIconModule
-  ]
+]
 })
 export class LogoutDialogComponent {
 

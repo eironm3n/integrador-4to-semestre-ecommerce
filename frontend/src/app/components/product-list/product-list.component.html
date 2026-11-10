@@ -8,36 +8,47 @@
   </div>
 
   <div class="content">
-    <div *ngIf="hasFilters" class="categories-container">
-      <div *ngFor="let category of categories">
-        <ng-container>
+    @if (hasFilters) {
+      <div class="categories-container">
+        @for (category of categories; track category) {
+          <div>
+            <ng-container>
+              <nb-card style="margin: 15px;">
+                <nb-card-header>
+                  {{ category.name }}
+                </nb-card-header>
+                <nb-card-body>
+                  <div class="categoty-products-container">
+                    @for (product of category.products; track product) {
+                      <app-product-item
+                        class="product-item"
+                        [product]="product"
+                        [category]="category.id">
+                      </app-product-item>
+                    }
+                  </div>
+                </nb-card-body>
+              </nb-card>
+            </ng-container>
+          </div>
+        }
+      </div>
+    }
+
+    @if (!hasFilters) {
+      <div class="products-container">
+        @if (isLoading) {
           <nb-card style="margin: 15px;">
-            <nb-card-header>
-              {{ category.name }}
-            </nb-card-header>
             <nb-card-body>
-              <div class="categoty-products-container">
-                <app-product-item 
-                  class="product-item" 
-                  *ngFor="let product of category.products" 
-                  [product]="product"
-                  [category]="category.id">
-                </app-product-item>
-              </div>
+              <nb-spinner size="large">Cargando productos…</nb-spinner>
             </nb-card-body>
           </nb-card>
-        </ng-container>
+        }
+        @for (product of products; track product) {
+          <app-product-item class="product-item" [product]="product">
+          </app-product-item>
+        }
       </div>
-    </div>
-
-    <div *ngIf="!hasFilters" class="products-container">
-      <nb-card style="margin: 15px;" *ngIf="isLoading">
-        <nb-card-body>
-          <nb-spinner size="large">Cargando productos…</nb-spinner>
-        </nb-card-body>
-      </nb-card>
-      <app-product-item class="product-item" *ngFor="let product of products" [product]="product">
-      </app-product-item>
-    </div>
+    }
   </div>
 </div>

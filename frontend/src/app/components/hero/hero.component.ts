@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { NbButtonModule } from '@nebular/theme';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, NbButtonModule],
+  imports: [NbButtonModule],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })

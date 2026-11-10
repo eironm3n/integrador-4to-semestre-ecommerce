@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Product } from '../../models/product.model';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ProductService } from '../../services/product.service';
@@ -11,11 +11,10 @@ import { NbDialogRef } from '@nebular/theme';
     templateUrl: './search-list.component.html',
     styleUrls: ['./search-list.component.scss'],
     imports: [
-      CommonModule,
-      ProductItemComponent,
-      FormsModule,
-      NebularModule,
-  ]
+    ProductItemComponent,
+    FormsModule,
+    NebularModule
+]
 })
 
 export class SearchListComponent {

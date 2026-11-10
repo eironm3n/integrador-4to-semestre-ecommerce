@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 
@@ -21,7 +21,7 @@ import { provideRouter } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideAnimations(),
+    provideZoneChangeDetection(),provideAnimations(),
     provideHttpClient(),
     importProvidersFrom(
       NbThemeModule.forRoot({ name: 'default' }),

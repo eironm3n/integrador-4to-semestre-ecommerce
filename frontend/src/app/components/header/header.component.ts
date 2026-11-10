@@ -1,5 +1,5 @@
 import { NbMenuService, NbSearchService, NbDialogService, NbDialogRef, NbPopoverModule } from '@nebular/theme';
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { CartComponent } from '../cart/cart.component';
 import { NebularModule } from '../../shared/nebular-module';
@@ -19,12 +19,11 @@ import { SearchListComponent } from '../search-list/search-list.component';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
     imports: [
-      CommonModule,
-      CartComponent,
-      NebularModule,
-      NbPopoverModule,
-      FormsModule
-    ]
+    CartComponent,
+    NebularModule,
+    NbPopoverModule,
+    FormsModule
+]
 })
 export class HeaderComponent implements OnInit {
   currentUser: any = null;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Product } from '../../models/product.model';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,11 +14,10 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
   imports: [
-    CommonModule,
     ProductItemComponent,
     NebularModule,
-    FiltersSidebarComponent,
-  ]
+    FiltersSidebarComponent
+]
 })
 export class ProductListComponent implements OnInit {
   categories: Category[] = [];

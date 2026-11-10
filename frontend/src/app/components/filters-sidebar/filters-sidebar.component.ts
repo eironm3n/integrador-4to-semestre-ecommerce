@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { NebularModule } from '../../shared/nebular-module';
 import { Category } from '../../models/category.model';
@@ -9,7 +9,7 @@ import { Category } from '../../models/category.model';
   standalone: true,
   templateUrl: './filters-sidebar.component.html',
   styleUrls: ['./filters-sidebar.component.scss'],
-  imports: [CommonModule, FormsModule, NebularModule]
+  imports: [FormsModule, NebularModule]
 })
 export class FiltersSidebarComponent implements OnInit {
   @Input() categories: Category[] = [];
