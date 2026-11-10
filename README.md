@@ -1,11 +1,12 @@
 # E-commerce Fullstack — Proyecto Integrador
 
-> **Trabajo académico** · Tecnicatura Universitaria en Programación — UTN, Facultad Regional San Rafael
-> **Entrega final del 4.º semestre** (2025) · Equipo **Código Enigma**
+> **Continuación individual de un proyecto académico** · Base: proyecto integrador del 4.º semestre
+> de la Tecnicatura Universitaria en Programación — UTN, Facultad Regional San Rafael (2025),
+> realizado con el equipo **Código Enigma**. Ver [Origen del proyecto](#origen-del-proyecto).
 
 Tienda online completa: catálogo de productos, categorías, carrito de compras,
 usuarios con autenticación y checkout con pasarela de pago. Frontend y backend
-desplegados por separado.
+se despliegan por separado.
 
 ## Tecnologías
 
@@ -51,16 +52,31 @@ y `environment.prod.ts` (producción, la usa `ng build`).
 Detalle completo (base de datos, `.env`, migraciones y seeders) en
 [`backend/README-original.md`](./backend/README-original.md).
 
-## Contexto y autoría
+## Origen del proyecto
 
-Proyecto integrador grupal del equipo **Código Enigma**, presentado como entrega
-final del 4.º semestre. La cátedra lo mantuvo en **dos repositorios** (frontend y
-backend); aquí se consolidan en uno solo para facilitar su lectura. El equipo
-trabajó con **rotación de roles**: desarrollo, gestión de tareas y seguimiento de
-avances semanales; la publicación en los repositorios de la cátedra la
-centralizaban algunos integrantes por turno.
+Este repositorio usa como **base principal el proyecto integrador de la Tecnicatura
+Universitaria en Programación** (UTN, Facultad Regional San Rafael). El proyecto se
+comenzó en **septiembre de 2025** y se realizó durante el 4.º semestre con el equipo
+**Código Enigma**, hasta su entrega final en **noviembre de 2025**.
 
-Repositorios originales de la cátedra:
+Durante la tecnicatura el equipo trabajó con **rotación de roles** (desarrollo,
+gestión de tareas y seguimiento de avances semanales), y la publicación en los
+repositorios de la cátedra la centralizaban algunos integrantes por turno.
+
+### Continuación individual
+
+A partir de esa base, **Arón Rojas**, integrante del equipo, continúa el proyecto
+de forma individual en este repositorio:
+
+- Unificación del frontend y el backend (que la cátedra mantenía en dos repositorios) en uno solo.
+- Migración del frontend de **Angular 19 a Angular 21** y de Nebular 15 a 17, con la
+  sintaxis moderna de control flow (`@if`/`@for`) y el constructor `@angular/build`.
+- Actualización de dependencias: el frontend pasó de 73 vulnerabilidades conocidas a **0**,
+  y el backend (Flask, Werkzeug, PyJWT, cryptography, entre otras) también quedó sin vulnerabilidades conocidas.
+- Seguridad: la clave que firma los tokens JWT pasa a ser obligatoria en producción.
+- Configuración de entornos (`src/environments`) para que el proyecto compile desde un clon limpio.
+
+### Repositorios originales de la cátedra
 
 - Frontend: <https://github.com/PowerSystem2024/CodigoEnigma_ProyectoIntegrador_CuartoSemestre_Front>
 - Backend: <https://github.com/PowerSystem2024/CodigoEnigma_ProyectoIntegrador_CuartoSemestre_Back>
