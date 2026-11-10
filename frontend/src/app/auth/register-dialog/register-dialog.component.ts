@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import {
   NbDialogRef,
   NbDialogService,
@@ -19,13 +19,12 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
   styleUrls: ['./register-dialog.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     NbCardModule,
     NbButtonModule,
     NbInputModule,
     NbIconModule
-  ]
+]
 })
 export class RegisterDialogComponent {
   registerForm: FormGroup;

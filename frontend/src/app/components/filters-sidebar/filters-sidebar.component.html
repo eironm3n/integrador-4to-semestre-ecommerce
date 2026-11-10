@@ -4,7 +4,9 @@
     <div class="filter-group">
       <label>Categorías</label>
       <nb-select placeholder="Selecciona categorías" multiple [(selected)]="selectedCategoryIds">
-        <nb-option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</nb-option>
+        @for (c of categories; track c) {
+          <nb-option [value]="c.id">{{ c.name }}</nb-option>
+        }
       </nb-select>
     </div>
 

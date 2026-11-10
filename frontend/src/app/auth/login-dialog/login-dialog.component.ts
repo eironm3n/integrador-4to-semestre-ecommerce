@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import {
   NbDialogRef,
   NbDialogService,
@@ -30,13 +30,12 @@ interface LoginResponse {
   styleUrls: ['./login-dialog.component.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     NbCardModule,
     NbButtonModule,
     NbInputModule,
     NbIconModule
-  ]
+]
 })
 export class LoginDialogComponent {
   loginForm: FormGroup;

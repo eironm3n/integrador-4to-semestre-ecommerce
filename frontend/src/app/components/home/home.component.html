@@ -10,35 +10,40 @@
 <div class="home-main-container">
 
   <!-- Featured category -->
-  <div *ngIf="featuredCategory">
-    <nb-card style="margin: 15px;">
-      <nb-card-header>
-        {{ featuredCategory.name }}
-      </nb-card-header>
-      <nb-card-body>
-        <app-featured-products [products]="featuredCategory.products" [category]="featuredCategory"></app-featured-products>
-      </nb-card-body>
-    </nb-card>
-  </div>
-
-  <!-- Resto de las categorías -->
-  <div *ngFor="let category of categories">
-    <ng-container *ngIf="category.id !== featuredCategory?.id && category.products.length > 0">
+  @if (featuredCategory) {
+    <div>
       <nb-card style="margin: 15px;">
         <nb-card-header>
-          {{ category.name }}
+          {{ featuredCategory.name }}
         </nb-card-header>
         <nb-card-body>
-          <div class="categoty-products-container">
-            <app-product-item
-              class="product-item"
-              *ngFor="let product of category.products"
-              [product]="product"
-              [category]="category.id">
-            </app-product-item>
-          </div>
+          <app-featured-products [products]="featuredCategory.products" [category]="featuredCategory"></app-featured-products>
         </nb-card-body>
       </nb-card>
-    </ng-container>
-  </div>
+    </div>
+  }
+
+  <!-- Resto de las categorías -->
+  @for (category of categories; track category) {
+    <div>
+      @if (category.id !== featuredCategory?.id && category.products.length > 0) {
+        <nb-card style="margin: 15px;">
+          <nb-card-header>
+            {{ category.name }}
+          </nb-card-header>
+          <nb-card-body>
+            <div class="categoty-products-container">
+              @for (product of category.products; track product) {
+                <app-product-item
+                  class="product-item"
+                  [product]="product"
+                  [category]="category.id">
+                </app-product-item>
+              }
+            </div>
+          </nb-card-body>
+        </nb-card>
+      }
+    </div>
+  }
 </div>
