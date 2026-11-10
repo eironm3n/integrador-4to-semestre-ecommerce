@@ -1,4 +1,4 @@
-# E-commerce Fullstack — Proyecto Integrador
+# Verdísimo — E-commerce fullstack (Angular + Flask)
 
 > **Continuación individual de un proyecto académico** · Base: proyecto integrador del 4.º semestre
 > de la Tecnicatura Universitaria en Programación — UTN, Facultad Regional San Rafael (2025),
