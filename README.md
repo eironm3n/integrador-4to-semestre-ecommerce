@@ -11,8 +11,12 @@ desplegados por separado.
 
 ### Frontend (`/frontend`)
 
-- **Angular 17** · **TypeScript** · **SCSS**
+- **Angular 21** (standalone components, control flow `@if`/`@for`) · **TypeScript** · **SCSS**
+- UI con **Nebular 17**
 - Despliegue en **Vercel**
+
+> Entregado originalmente en Angular 19; migrado después a Angular 21 con `ng update`
+> (Nebular 17 es la última versión y solo admite Angular 21).
 
 ### Backend (`/backend`)
 
@@ -31,6 +35,7 @@ desplegados por separado.
 cd backend
 python -m venv .venv && . .venv/Scripts/Activate.ps1   # o: source .venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env    # completar DB_* y SECRET_KEY (obligatoria en producción)
 flask --app app db upgrade && python seed.py
 flask --app app run --debug
 
@@ -39,6 +44,9 @@ cd frontend
 npm install
 ng serve -o
 ```
+
+La URL del backend se configura en `frontend/src/environments/environment.ts` (desarrollo)
+y `environment.prod.ts` (producción, la usa `ng build`).
 
 Detalle completo (base de datos, `.env`, migraciones y seeders) en
 [`backend/README-original.md`](./backend/README-original.md).
